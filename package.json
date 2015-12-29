@@ -1,0 +1,26 @@
+{
+  "name": "react-native-pdf-view",
+  "version": "0.1.1",
+  "description": "view pdf file using react-native",
+  "main": "PDFView.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnjon/react-native-pdf-view.git"
+  },
+  "keywords": [
+    "react-component",
+    "react-native",
+    "ios",
+    "android",
+    "pdf",
+    "view"
+  ],
+  "author": {
+    "name": "cnjon",
+    "url": "https://github.com/cnjon"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cnjon/react-native-pdf-view/issues"
+  }
+}
