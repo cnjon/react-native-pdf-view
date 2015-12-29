@@ -57,5 +57,5 @@ var styles = StyleSheet.create({
 | ------------- |:-------------:|:------------:				| ----------- |
 | src        | string 			| null 			 				| pdf absolute path
 | pageNumber    		  | number  	    |	1 		 				| page index
-| zoom 		  | number  	    |	1 	| zoom scale
+| zoom 		  | number  	    |	1.0 	| zoom scale
 | onLoadComplete 			| function     	  | null	 			| page load complete
