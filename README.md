@@ -29,6 +29,22 @@ dependencies {
 
 * register module (in MainActivity.java)
 
+On newer versions of React Native (0.18+):
+```java
+import com.keyee.pdfview.PDFView;  // <--- import
+
+public class MainActivity extends ReactActivity {
+  ......
+    @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+        new PDFView(), // <------ add here
+        new MainReactPackage());
+    }
+}
+```
+
+On older versions of React Native:
 ```java
 import com.keyee.pdfview.PDFView;  // <--- import
 
@@ -89,7 +105,7 @@ export default class PDF extends Component {
     render(){
       <PDFView ref={(pdf)=>{this.pdfView = pdf;}}
                          src={"sdcard/pdffile.pdf"}
-                         onLoadComplete = {()=>{
+                         onLoadComplete = {(pageCount)=>{
                             this.pdfView.setNativeProps({
                                 zoom: 1.5
                             });
@@ -112,4 +128,4 @@ var styles = StyleSheet.create({
 | src        | string 			| null 			 				| pdf absolute path
 | pageNumber    		  | number  	    |	1 		 				| page index
 | zoom 		  | number  	    |	1.0 	| zoom scale
-| onLoadComplete 			| function     	  | null	 			| page load complete
+| onLoadComplete 			| function     	  | null	 			| page load complete,return page count
