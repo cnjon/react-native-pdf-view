@@ -12,7 +12,7 @@
 
 @interface RNPDFView : UIView
 
-@property (nonatomic, assign) NSString *src;
-@property (nonatomic, assign) NSNumber *pageNumber;
+@property (nonatomic, strong) NSString *src;
+@property (nonatomic, strong) NSNumber *pageNumber;
 
 @end
