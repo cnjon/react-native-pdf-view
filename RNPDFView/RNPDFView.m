@@ -66,8 +66,7 @@
     _pdf = CGPDFDocumentCreateWithURL( (__bridge CFURLRef) pdfURL );
     _numberOfPages = (int)CGPDFDocumentGetNumberOfPages( _pdf );
 
-    
-    if (self.pageNumber != nil) {
+    if (self.pageNumber != nil && [self.pageNumber intValue] <= _numberOfPages) {
       _page = CGPDFDocumentGetPage( _pdf, [self.pageNumber unsignedIntValue] );
     } else {
       _page = CGPDFDocumentGetPage( _pdf, 1 );
