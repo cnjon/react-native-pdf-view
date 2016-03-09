@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!--
 
     Copyright 2014 Joan Zapata
@@ -20,12 +19,7 @@
 
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.joanzapata.pdfview"
-      android:versionCode="1"
-      android:versionName="1.0.0">
-    
-	<!-- Min version 8 (2.2) -->
-	<uses-sdk android:minSdkVersion="8"  
-              android:targetSdkVersion="17"/>
+      package="com.keyee.pdfview">
+
               
 </manifest>
