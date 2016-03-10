@@ -7,38 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20D8E0531C8E94D400039823 /* PDFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D8E04C1C8E94D400039823 /* PDFScrollView.m */; };
-		20D8E0541C8E94D400039823 /* RNPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D8E04E1C8E94D400039823 /* RNPDFView.m */; };
-		20D8E0551C8E94D400039823 /* RNPDFViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D8E0501C8E94D400039823 /* RNPDFViewManager.m */; };
-		20D8E0561C8E94D400039823 /* TiledPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D8E0521C8E94D400039823 /* TiledPDFView.m */; };
+		20009ADB1C9132EE00BBD587 /* RNPDFViewBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 20009ADA1C9132EE00BBD587 /* RNPDFViewBridge.m */; };
+		20009ADD1C9138A600BBD587 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FF53B1C912D14007C3359 /* DataViewController.swift */; };
+		20009ADE1C9138A600BBD587 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FF53C1C912D14007C3359 /* ModelController.swift */; };
+		20009ADF1C9138A600BBD587 /* PDFScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FF53D1C912D14007C3359 /* PDFScrollView.swift */; };
+		20009AE01C9138A600BBD587 /* RNPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FF5451C912DC7007C3359 /* RNPDFView.swift */; };
+		20009AE11C9138A600BBD587 /* RNPDFViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FF53E1C912D14007C3359 /* RNPDFViewManager.swift */; };
+		20009AE21C9138A600BBD587 /* TiledPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205FF53F1C912D14007C3359 /* TiledPDFView.swift */; };
+		205FF55C1C912F73007C3359 /* RNPDFViewSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 205FF55B1C912F73007C3359 /* RNPDFViewSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		20D8E03D1C8E946C00039823 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		20D8E03F1C8E946C00039823 /* libRNPDFView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNPDFView.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		20D8E04B1C8E94D400039823 /* PDFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFScrollView.h; sourceTree = "<group>"; };
-		20D8E04C1C8E94D400039823 /* PDFScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFScrollView.m; sourceTree = "<group>"; };
-		20D8E04D1C8E94D400039823 /* RNPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNPDFView.h; sourceTree = "<group>"; };
-		20D8E04E1C8E94D400039823 /* RNPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNPDFView.m; sourceTree = "<group>"; };
-		20D8E04F1C8E94D400039823 /* RNPDFViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNPDFViewManager.h; sourceTree = "<group>"; };
-		20D8E0501C8E94D400039823 /* RNPDFViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNPDFViewManager.m; sourceTree = "<group>"; };
-		20D8E0511C8E94D400039823 /* TiledPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiledPDFView.h; sourceTree = "<group>"; };
-		20D8E0521C8E94D400039823 /* TiledPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TiledPDFView.m; sourceTree = "<group>"; };
+		20009ADA1C9132EE00BBD587 /* RNPDFViewBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNPDFViewBridge.m; sourceTree = "<group>"; };
+		20009ADC1C91335400BBD587 /* RNPDFViewBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNPDFViewBridge.h; sourceTree = "<group>"; };
+		205FF53A1C912D13007C3359 /* RNPDFView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNPDFView-Bridging-Header.h"; sourceTree = "<group>"; };
+		205FF53B1C912D14007C3359 /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		205FF53C1C912D14007C3359 /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		205FF53D1C912D14007C3359 /* PDFScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFScrollView.swift; sourceTree = "<group>"; };
+		205FF53E1C912D14007C3359 /* RNPDFViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNPDFViewManager.swift; sourceTree = "<group>"; };
+		205FF53F1C912D14007C3359 /* TiledPDFView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TiledPDFView.swift; sourceTree = "<group>"; };
+		205FF5451C912DC7007C3359 /* RNPDFView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNPDFView.swift; sourceTree = "<group>"; };
+		205FF54D1C912F48007C3359 /* RNPDFViewSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNPDFViewSwift.h; sourceTree = "<group>"; };
+		205FF54F1C912F48007C3359 /* RNPDFViewSwift.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNPDFViewSwift.m; sourceTree = "<group>"; };
+		205FF5591C912F73007C3359 /* RNPDFView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RNPDFView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		205FF55B1C912F73007C3359 /* RNPDFViewSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNPDFViewSwift.h; sourceTree = "<group>"; };
+		205FF55D1C912F73007C3359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		20D8E03C1C8E946C00039823 /* Frameworks */ = {
+		205FF5551C912F73007C3359 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -48,105 +45,151 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		20D8E0361C8E946C00039823 = {
+		205FF5251C912C9A007C3359 = {
 			isa = PBXGroup;
 			children = (
-				20D8E0411C8E946C00039823 /* RNPDFView */,
-				20D8E0401C8E946C00039823 /* Products */,
+				205FF5301C912C9A007C3359 /* RNPDFView */,
+				205FF54C1C912F48007C3359 /* RNPDFViewSwift */,
+				205FF55A1C912F73007C3359 /* RNPDFViewSwift */,
+				205FF52F1C912C9A007C3359 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		20D8E0401C8E946C00039823 /* Products */ = {
+		205FF52F1C912C9A007C3359 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				20D8E03F1C8E946C00039823 /* libRNPDFView.a */,
+				205FF5591C912F73007C3359 /* RNPDFView.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		20D8E0411C8E946C00039823 /* RNPDFView */ = {
+		205FF5301C912C9A007C3359 /* RNPDFView */ = {
 			isa = PBXGroup;
 			children = (
-				20D8E04B1C8E94D400039823 /* PDFScrollView.h */,
-				20D8E04C1C8E94D400039823 /* PDFScrollView.m */,
-				20D8E04D1C8E94D400039823 /* RNPDFView.h */,
-				20D8E04E1C8E94D400039823 /* RNPDFView.m */,
-				20D8E04F1C8E94D400039823 /* RNPDFViewManager.h */,
-				20D8E0501C8E94D400039823 /* RNPDFViewManager.m */,
-				20D8E0511C8E94D400039823 /* TiledPDFView.h */,
-				20D8E0521C8E94D400039823 /* TiledPDFView.m */,
+				205FF53B1C912D14007C3359 /* DataViewController.swift */,
+				205FF53C1C912D14007C3359 /* ModelController.swift */,
+				205FF53D1C912D14007C3359 /* PDFScrollView.swift */,
+				205FF5451C912DC7007C3359 /* RNPDFView.swift */,
+				205FF53E1C912D14007C3359 /* RNPDFViewManager.swift */,
+				205FF53F1C912D14007C3359 /* TiledPDFView.swift */,
+				205FF53A1C912D13007C3359 /* RNPDFView-Bridging-Header.h */,
+				20009ADA1C9132EE00BBD587 /* RNPDFViewBridge.m */,
+				20009ADC1C91335400BBD587 /* RNPDFViewBridge.h */,
 			);
 			path = RNPDFView;
 			sourceTree = "<group>";
 		};
+		205FF54C1C912F48007C3359 /* RNPDFViewSwift */ = {
+			isa = PBXGroup;
+			children = (
+				205FF54D1C912F48007C3359 /* RNPDFViewSwift.h */,
+				205FF54F1C912F48007C3359 /* RNPDFViewSwift.m */,
+			);
+			path = RNPDFViewSwift;
+			sourceTree = "<group>";
+		};
+		205FF55A1C912F73007C3359 /* RNPDFViewSwift */ = {
+			isa = PBXGroup;
+			children = (
+				205FF55B1C912F73007C3359 /* RNPDFViewSwift.h */,
+				205FF55D1C912F73007C3359 /* Info.plist */,
+			);
+			path = RNPDFViewSwift;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		205FF5561C912F73007C3359 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				205FF55C1C912F73007C3359 /* RNPDFViewSwift.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		20D8E03E1C8E946C00039823 /* RNPDFView */ = {
+		205FF5581C912F73007C3359 /* RNPDFView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 20D8E0481C8E946C00039823 /* Build configuration list for PBXNativeTarget "RNPDFView" */;
+			buildConfigurationList = 205FF55E1C912F73007C3359 /* Build configuration list for PBXNativeTarget "RNPDFView" */;
 			buildPhases = (
-				20D8E03B1C8E946C00039823 /* Sources */,
-				20D8E03C1C8E946C00039823 /* Frameworks */,
-				20D8E03D1C8E946C00039823 /* CopyFiles */,
+				205FF5541C912F73007C3359 /* Sources */,
+				205FF5551C912F73007C3359 /* Frameworks */,
+				205FF5561C912F73007C3359 /* Headers */,
+				205FF5571C912F73007C3359 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = RNPDFView;
-			productName = RNPDFView;
-			productReference = 20D8E03F1C8E946C00039823 /* libRNPDFView.a */;
-			productType = "com.apple.product-type.library.static";
+			productName = RNPDFViewSwift;
+			productReference = 205FF5591C912F73007C3359 /* RNPDFView.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		20D8E0371C8E946C00039823 /* Project object */ = {
+		205FF5261C912C9A007C3359 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "Sibelius Seraphini";
+				ORGANIZATIONNAME = RN;
 				TargetAttributes = {
-					20D8E03E1C8E946C00039823 = {
+					205FF5581C912F73007C3359 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = M8UXLTC426;
 					};
 				};
 			};
-			buildConfigurationList = 20D8E03A1C8E946C00039823 /* Build configuration list for PBXProject "RNPDFView" */;
+			buildConfigurationList = 205FF5291C912C9A007C3359 /* Build configuration list for PBXProject "RNPDFView" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 20D8E0361C8E946C00039823;
-			productRefGroup = 20D8E0401C8E946C00039823 /* Products */;
+			mainGroup = 205FF5251C912C9A007C3359;
+			productRefGroup = 205FF52F1C912C9A007C3359 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				20D8E03E1C8E946C00039823 /* RNPDFView */,
+				205FF5581C912F73007C3359 /* RNPDFView */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		205FF5571C912F73007C3359 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		20D8E03B1C8E946C00039823 /* Sources */ = {
+		205FF5541C912F73007C3359 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20D8E0561C8E94D400039823 /* TiledPDFView.m in Sources */,
-				20D8E0531C8E94D400039823 /* PDFScrollView.m in Sources */,
-				20D8E0551C8E94D400039823 /* RNPDFViewManager.m in Sources */,
-				20D8E0541C8E94D400039823 /* RNPDFView.m in Sources */,
+				20009ADD1C9138A600BBD587 /* DataViewController.swift in Sources */,
+				20009ADE1C9138A600BBD587 /* ModelController.swift in Sources */,
+				20009ADF1C9138A600BBD587 /* PDFScrollView.swift in Sources */,
+				20009AE01C9138A600BBD587 /* RNPDFView.swift in Sources */,
+				20009AE11C9138A600BBD587 /* RNPDFViewManager.swift in Sources */,
+				20009AE21C9138A600BBD587 /* TiledPDFView.swift in Sources */,
+				20009ADB1C9132EE00BBD587 /* RNPDFViewBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		20D8E0461C8E946C00039823 /* Debug */ = {
+		205FF5351C912C9A007C3359 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -189,7 +232,7 @@
 			};
 			name = Debug;
 		};
-		20D8E0471C8E946C00039823 /* Release */ = {
+		205FF5361C912C9A007C3359 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -226,9 +269,15 @@
 			};
 			name = Release;
 		};
-		20D8E0491C8E946C00039823 /* Debug */ = {
+		205FF55F1C912F73007C3359 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/node_modules/react-native/React";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -236,15 +285,29 @@
 					"$(SRCROOT)/../react-native/React/**",
 					"$(SRCROOT)/node_modules/react-native/React/**",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				INFOPLIST_FILE = RNPDFViewSwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/node_modules/react-native/React";
+				PRODUCT_BUNDLE_IDENTIFIER = br.sibelius.RNPDFViewSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNPDFView/RNPDFView-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		20D8E04A1C8E946C00039823 /* Release */ = {
+		205FF5601C912F73007C3359 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/node_modules/react-native/React";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -252,34 +315,42 @@
 					"$(SRCROOT)/../react-native/React/**",
 					"$(SRCROOT)/node_modules/react-native/React/**",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				INFOPLIST_FILE = RNPDFViewSwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/node_modules/react-native/React";
+				PRODUCT_BUNDLE_IDENTIFIER = br.sibelius.RNPDFViewSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNPDFView/RNPDFView-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		20D8E03A1C8E946C00039823 /* Build configuration list for PBXProject "RNPDFView" */ = {
+		205FF5291C912C9A007C3359 /* Build configuration list for PBXProject "RNPDFView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				20D8E0461C8E946C00039823 /* Debug */,
-				20D8E0471C8E946C00039823 /* Release */,
+				205FF5351C912C9A007C3359 /* Debug */,
+				205FF5361C912C9A007C3359 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		20D8E0481C8E946C00039823 /* Build configuration list for PBXNativeTarget "RNPDFView" */ = {
+		205FF55E1C912F73007C3359 /* Build configuration list for PBXNativeTarget "RNPDFView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				20D8E0491C8E946C00039823 /* Debug */,
-				20D8E04A1C8E946C00039823 /* Release */,
+				205FF55F1C912F73007C3359 /* Debug */,
+				205FF5601C912F73007C3359 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 20D8E0371C8E946C00039823 /* Project object */;
+	rootObject = 205FF5261C912C9A007C3359 /* Project object */;
 }

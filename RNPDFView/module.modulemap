@@ -1,0 +1,6 @@
+framework module RNPDFView {
+   umbrella header "RNPDFView.h"
+
+   export *
+   module * { export * }
+}
