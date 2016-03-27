@@ -28,7 +28,9 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
     private Context context;
     private PDFView pdfView;
     Integer pageNumber = 1;
-    String fileName;
+    String assetName;
+    String filePath;
+
 
     public PDFViewManager(ReactApplicationContext reactContext){
         this.context = reactContext;
@@ -51,7 +53,7 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
     @Override
     public void onPageChanged(int page, int pageCount) {
         pageNumber = page;
-        showLog(format("%s %s / %s", fileName, page, pageCount));
+        showLog(format("%s %s / %s", filePath, page, pageCount));
     }
 
     @Override
@@ -69,11 +71,18 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
     private void display(boolean jumpToFirstPage) {
         if (jumpToFirstPage)
             pageNumber = 1;
-        showLog(format("display %s %s", fileName, pageNumber));
-        if (fileName != null){
+        showLog(format("display %s %s", filePath, pageNumber));
+        if (assetName != null) {
+            pdfView.fromAsset(assetName)
+                .defaultPage(pageNumber)
+                .swipeVertical(true)
+                .onPageChange(this)
+                .onLoad(this)
+                .load();
+        } else if (filePath != null){
             //fromFile,fromAsset
             //pdfView.fromAsset(fileName)
-            File pdfFile = new File(fileName);
+            File pdfFile = new File(filePath);
             pdfView.fromFile(pdfFile)
                 .defaultPage(pageNumber)
                 //.showMinimap(false)
@@ -85,10 +94,9 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
         }
     }
 
-    @ReactProp(name = "src")
-    public void setSrc(PDFView view, String src) {
-        //view.setSource(src);
-        fileName = src;
+    @ReactProp(name = "asset")
+    public void setAsset(PDFView view, String ast) {
+        assetName = ast;
         display(false);
     }
 
@@ -99,6 +107,19 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
             pageNumber = pageNum;
             display(false);
         }
+    }
+
+    @ReactProp(name = "path")
+    public void setPath(PDFView view, String pth) {
+        filePath = pth;
+        display(false);
+    }
+
+    @ReactProp(name = "src")
+    public void setSrc(PDFView view, String src) {
+        //view.setSource(src);
+        filePath = src;
+        display(false);
     }
 
     @ReactProp(name = "zoom")
