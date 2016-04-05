@@ -22,10 +22,12 @@ class PDFView extends Component {
 
 PDFView.propTypes = {
   ...View.propTypes,
-  src: PropTypes.string.isRequired,
-  pageNumber: PropTypes.number,
-  zoom: PropTypes.number,
-  onLoadComplete: PropTypes.func
+    asset: PropTypes.string,
+    src: PropTypes.string,
+    pageNumber: PropTypes.number,
+    path: PropTypes.string,
+    zoom: PropTypes.number,
+    onLoadComplete: PropTypes.func
 };
 
 var PDFCustomView = requireNativeComponent('RCTPDFViewAndroid', PDFView, {
