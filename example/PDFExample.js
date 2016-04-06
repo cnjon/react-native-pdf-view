@@ -50,7 +50,7 @@ export default class PDFExample extends Component {
         return (
             <PDFView ref={(pdf)=>{this.pdfView = pdf;}}
                      key="sop"
-                     src={this.pdfPath}
+                     path={this.pdfPath}
                      onLoadComplete = {(pageCount)=>{
                         console.log(`total page count: ${pageCount}`);
                         this.zoom();

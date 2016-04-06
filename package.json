@@ -1,6 +1,6 @@
 {
   "name": "react-native-pdf-view",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A pdf file view component for react native.",
   "main": "index.js",
   "repository": {
@@ -11,6 +11,7 @@
     "react-component",
     "react-native",
     "android",
+    "ios",
     "pdf",
     "view"
   ],

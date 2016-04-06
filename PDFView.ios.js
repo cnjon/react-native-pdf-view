@@ -22,16 +22,17 @@ class PDFView extends Component {
 
 PDFView.propTypes = {
   ...View.propTypes,
-  src: PropTypes.string.isRequired,
+  src: PropTypes.string,
+  path: PropTypes.string,
   pageNumber: PropTypes.number,
   zoom: PropTypes.number,
   onLoadComplete: PropTypes.func
 };
 
-var PDFCustomView = requireNativeComponent('RNPDFView', null);
+//var PDFCustomView = requireNativeComponent('RNPDFView', null);
 
-//var PDFCustomView = requireNativeComponent('RCTPDFViewAndroid', PDFView, {
-//  nativeOnly: {onChange: true}
-//});
+var PDFCustomView = requireNativeComponent('RNPDFView', PDFView, {
+  nativeOnly: {onChange: true}
+});
 
 export default PDFView;

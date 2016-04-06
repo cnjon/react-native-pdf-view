@@ -32,10 +32,6 @@
 {
   if ((self = [super init])) {
     _tiledPDFView = [[TiledPDFView alloc] initWithFrame:self.bounds scale:_PDFScale];
-    //    _eventDispatcher = eventDispatcher;
-    //    _imageView = [[FLAnimatedImageView alloc] init];
-    //
-    //    [_imageView addObserver:self forKeyPath:@"currentFrameIndex" options:0 context:nil];
   }
   
   return self;
@@ -57,12 +53,12 @@
 
 - (void)reloadPdf
 {
-  if (self.src == (id)[NSNull null] || self.src.length == 0) {
-    NSLog(@"null src");
+  if (self.path == (id)[NSNull null] || self.path.length == 0) {
+    NSLog(@"null path");
   } else {
-    NSLog(@"not null: %@", self.src);
+    NSLog(@"not null: %@", self.path);
   
-    NSURL *pdfURL = [NSURL fileURLWithPath:self.src];
+    NSURL *pdfURL = [NSURL fileURLWithPath:self.path];
     _pdf = CGPDFDocumentCreateWithURL( (__bridge CFURLRef) pdfURL );
     _numberOfPages = (int)CGPDFDocumentGetNumberOfPages( _pdf );
 
@@ -92,10 +88,27 @@
 
 - (void)setSrc:(NSString *)src
 {
-  if (![src isEqual:_src]) {
-    _src = [src copy];
+  if (![src isEqual:_path]) {
+    _path = [src copy];
     [self reloadPdf];
   }
+}
+
+- (void)setPath:(NSString *)path
+{
+    if (![path isEqual:_path]) {
+        _path = [path copy];
+        [self reloadPdf];
+    }
+}
+
+- (void)setZoom:(NSNumber *)zoom
+{
+    if (![zoom isEqual:_zoom]) {
+        NSLog(@"setZoom %@ -> %@", _zoom, zoom);
+        _zoom = [zoom copy];
+        [self reloadPdf];
+    }
 }
 
 - (void)layoutSubviews
@@ -108,11 +121,16 @@
   NSLog(@"%s self.myScale=%f",__PRETTY_FUNCTION__, myScale);
   
   _pdfScrollView.frame = self.bounds;
-  _pdfScrollView.zoomScale = 1.0;
+  _pdfScrollView.zoomScale = (_zoom == NULL ? 1.0 : [_zoom doubleValue]);
   _pdfScrollView.PDFScale = myScale;
   _pdfScrollView.tiledPDFView.bounds = self.bounds;
   _pdfScrollView.tiledPDFView.myScale = myScale;
   [_pdfScrollView.tiledPDFView.layer setNeedsDisplay];
+  NSLog(@"onChange==NULL? %@",_onChange==NULL?@"yes":@"no");
+  if(_onChange){
+    NSLog(@"onChange %d", _numberOfPages);
+    _onChange(@{ @"message": @(_numberOfPages) });
+  }
 }
 
 @end

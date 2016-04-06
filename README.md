@@ -1,5 +1,5 @@
 # react-native-pdf-view
-React Native PDF View (Android Only)
+React Native PDF View (cross-platform support)
 
 ### Breaking change
 
@@ -123,9 +123,11 @@ var styles = StyleSheet.create({
 
 ### Configuration
 
-| Property      | Type        	| Default 		 				| Description |
-| ------------- |:-------------:|:------------:				| ----------- |
-| src        | string 			| null 			 				| pdf absolute path
-| pageNumber    		  | number  	    |	1 		 				| page index
-| zoom 		  | number  	    |	1.0 	| zoom scale
-| onLoadComplete 			| function     	  | null	 			| page load complete,return page count
+| Property      | Type        	| Default 		 				| Description | iOS | Android |
+| ------------- |:-------------:|:------------:				| ----------- | --- | ------- |
+| path        | string 			| null 			 				| pdf absolute path| ✔   | ✔ |
+| src        | string 			| null 			 				| pdf absolute path(`Deprecated`) | ✔   | ✔ |
+| asset        | string 			| null 			 				| the name of a PDF file in the asset folder |   | ✔ |
+| pageNumber    		  | number  	    |	1 		 				| page index | ✔   | ✔ |
+| zoom 		  | number  	    |	1.0 	| zoom scale | ✔   | ✔ |
+| onLoadComplete 			| function     	  | null	 			| page load complete,return page count | ✔   | ✔ |
