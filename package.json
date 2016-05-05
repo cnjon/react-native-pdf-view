@@ -22,8 +22,5 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/cnjon/react-native-pdf-view/issues"
-  },
-  "peerDependencies": {
-    "react-native": "^0.21.0"
   }
 }
