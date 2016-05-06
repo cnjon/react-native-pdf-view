@@ -1,5 +1,6 @@
 'use strict';
-import React,{ requireNativeComponent, Component, PropTypes, View } from 'react-native';
+import React,{ Component, PropTypes } from 'react';
+import { requireNativeComponent, View } from 'react-native';
 
 class PDFView extends Component {
   constructor(props) {
