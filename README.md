@@ -9,7 +9,7 @@ React native 0.19 changed the ReactProps class which led to problems with updati
 ```bash
 npm i react-native-pdf-view --save
 
-rnpm link react-native-pdf-view
+react-native link react-native-pdf-view
 ```
 * In `android/setting.gradle`
 
