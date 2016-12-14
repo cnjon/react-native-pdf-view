@@ -70,10 +70,10 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
     }
 
     private void display(boolean jumpToFirstPage) {
+        showLog(format("%s %s / %s", filePath, page, pageCount));
         pdfView.useBestQuality(true);
         if (jumpToFirstPage)
             pageNumber = 0;
-        showLog(format("display %s %s", filePath, pageNumber));
         if (assetName != null) {
             pdfView.fromAsset(assetName)
                 .defaultPage(pageNumber)
@@ -99,7 +99,7 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
     @ReactProp(name = "pageNumber")
     public void setPageNumber(PDFView view, Integer pageNum) {
         //view.setPageNumber(pageNum);
-        if (pageNum > 0){
+        if (pageNum >= 0){
             pageNumber = pageNum;
             display(false);
         }
@@ -108,7 +108,7 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
     @ReactProp(name = "path")
     public void setPath(PDFView view, String pth) {
         filePath = pth;
-        display(false);
+        display(true);
     }
 
     @ReactProp(name = "src")
