@@ -6,9 +6,10 @@ import android.content.Context;
 import android.util.Log;
 import android.graphics.PointF;
 
-import com.joanzapata.pdfview.PDFView;
-import com.joanzapata.pdfview.listener.OnPageChangeListener;
-import com.joanzapata.pdfview.listener.OnLoadCompleteListener;
+import com.github.barteksc.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
+import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
+import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
 
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -27,7 +28,7 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
     private static final String REACT_CLASS = "RCTPDFViewAndroid";
     private Context context;
     private PDFView pdfView;
-    Integer pageNumber = 1;
+    Integer pageNumber = 0;
     String assetName;
     String filePath;
 
@@ -69,25 +70,20 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
     }
 
     private void display(boolean jumpToFirstPage) {
+        pdfView.useBestQuality(true);
         if (jumpToFirstPage)
-            pageNumber = 1;
+            pageNumber = 0;
         showLog(format("display %s %s", filePath, pageNumber));
         if (assetName != null) {
             pdfView.fromAsset(assetName)
                 .defaultPage(pageNumber)
-                .swipeVertical(true)
                 .onPageChange(this)
                 .onLoad(this)
                 .load();
-        } else if (filePath != null){
-            //fromFile,fromAsset
-            //pdfView.fromAsset(fileName)
+        } else if (filePath != null) {
             File pdfFile = new File(filePath);
             pdfView.fromFile(pdfFile)
                 .defaultPage(pageNumber)
-                //.showMinimap(false)
-                //.enableSwipe(true)
-                .swipeVertical(true)
                 .onPageChange(this)
                 .onLoad(this)
                 .load();
