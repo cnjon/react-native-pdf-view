@@ -6,15 +6,15 @@ import android.content.Context;
 import android.util.Log;
 import android.graphics.PointF;
 
-/*
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
-*/
+
+/*
 import com.joanzapata.pdfview.PDFView;
 import com.joanzapata.pdfview.listener.OnPageChangeListener;
 import com.joanzapata.pdfview.listener.OnLoadCompleteListener;
-
+*/
 
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -81,7 +81,7 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
         if (assetName != null) {
             pdfView.fromAsset(assetName)
                 .defaultPage(pageNumber)
-                .swipeVertical(true)
+                //.swipeVertical(true)
                 .onPageChange(this)
                 .onLoad(this)
                 .load();
@@ -93,7 +93,7 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
                 .defaultPage(pageNumber)
                 //.showMinimap(false)
                 //.enableSwipe(true)
-                .swipeVertical(true)
+                //.swipeVertical(true)
                 .onPageChange(this)
                 .onLoad(this)
                 .load();
