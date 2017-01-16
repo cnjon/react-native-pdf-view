@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 
-#import "RCTBridgeModule.h"
-#import "RCTEventDispatcher.h"
+#import <React/RCTBridgeModule.h>
+#import <React/RCTEventDispatcher.h>
 #import "UIView+React.h"
-#import "RCTLog.h"
+#import <React/RCTLog.h>
 
 #import "TiledPDFView.h"
 #import "PDFScrollView.h"

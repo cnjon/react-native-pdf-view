@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RCTBridge.h"
+#import <React/RCTBridge.h>
 #import "RNPDFViewManager.h"
 #import "RNPDFView.h"
-#import "RCTEventDispatcher.h"
+#import <React/RCTEventDispatcher.h>
 
 @implementation RNPDFViewManager
 
