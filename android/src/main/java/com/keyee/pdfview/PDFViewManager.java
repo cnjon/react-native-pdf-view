@@ -6,9 +6,10 @@ import android.content.Context;
 import android.util.Log;
 import android.graphics.PointF;
 
-import com.joanzapata.pdfview.PDFView;
-import com.joanzapata.pdfview.listener.OnPageChangeListener;
-import com.joanzapata.pdfview.listener.OnLoadCompleteListener;
+import com.github.barteksc.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
+import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
+
 
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -26,7 +27,6 @@ import static java.lang.String.format;
 public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPageChangeListener,OnLoadCompleteListener {
     private static final String REACT_CLASS = "RCTPDFViewAndroid";
     private Context context;
-    private PDFView pdfView;
     Integer pageNumber = 1;
     String assetName;
     String filePath;
@@ -43,11 +43,7 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
 
     @Override
     public PDFView createViewInstance(ThemedReactContext context) {
-        if (pdfView == null){
-            pdfView = new PDFView(context, null);
-        }
-        return pdfView;
-        //return new PDFView(context, null);
+        return new PDFView(context, null);
     }
 
     @Override
@@ -58,24 +54,23 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
 
     @Override
     public void loadComplete(int nbPages) {
-        WritableMap event = Arguments.createMap();
-        event.putString("message", ""+nbPages);
-        ReactContext reactContext = (ReactContext)pdfView.getContext();
-        reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
-            pdfView.getId(),
-            "topChange",
-            event
-         );
+        // WritableMap event = Arguments.createMap();
+        // event.putString("message", ""+nbPages);
+        // ReactContext reactContext = (ReactContext)pdfView.getContext();
+        // reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
+        //     pdfView.getId(),
+        //     "topChange",
+        //     event
+        //  );
     }
 
-    private void display(boolean jumpToFirstPage) {
+    private void display(PDFView pdfView, boolean jumpToFirstPage) {
         if (jumpToFirstPage)
             pageNumber = 1;
         showLog(format("display %s %s", filePath, pageNumber));
         if (assetName != null) {
             pdfView.fromAsset(assetName)
                 .defaultPage(pageNumber)
-                .swipeVertical(true)
                 .onPageChange(this)
                 .onLoad(this)
                 .load();
@@ -87,7 +82,6 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
                 .defaultPage(pageNumber)
                 //.showMinimap(false)
                 //.enableSwipe(true)
-                .swipeVertical(true)
                 .onPageChange(this)
                 .onLoad(this)
                 .load();
@@ -97,7 +91,7 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
     @ReactProp(name = "asset")
     public void setAsset(PDFView view, String ast) {
         assetName = ast;
-        display(false);
+        display(view, false);
     }
 
     @ReactProp(name = "pageNumber")
@@ -105,27 +99,27 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
         //view.setPageNumber(pageNum);
         if (pageNum > 0){
             pageNumber = pageNum;
-            display(false);
+            display(view, false);
         }
     }
 
     @ReactProp(name = "path")
     public void setPath(PDFView view, String pth) {
         filePath = pth;
-        display(false);
+        display(view, false);
     }
 
     @ReactProp(name = "src")
     public void setSrc(PDFView view, String src) {
         //view.setSource(src);
         filePath = src;
-        display(false);
+        display(view, false);
     }
 
     @ReactProp(name = "zoom")
     public void zoomTo(PDFView view, float zoomScale) {
         PointF pivot = new PointF(zoomScale, zoomScale);
-        pdfView.zoomCenteredTo(zoomScale, pivot);
+        view.zoomCenteredTo(zoomScale, pivot);
     }
 
     private void showLog(final String str) {

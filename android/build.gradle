@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.3.1'
+        classpath 'com.android.tools.build:gradle:2.2.0-beta1'
     }
 }
 
@@ -21,6 +21,9 @@ android {
         minSdkVersion 16
         targetSdkVersion 23
     }
+    lintOptions {
+        abortOnError false
+    }
 }
 
 repositories {
@@ -29,5 +32,5 @@ repositories {
 
 dependencies {
     compile 'com.facebook.react:react-native:0.20.+'
-    compile 'com.joanzapata.pdfview:android-pdfview:1.0.4@aar'
+    compile 'com.github.barteksc:android-pdf-viewer:2.0.2'
 }
