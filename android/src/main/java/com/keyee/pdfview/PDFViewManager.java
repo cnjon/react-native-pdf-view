@@ -33,7 +33,7 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
     private static final String REACT_CLASS = "RCTPDFViewAndroid";
     private Context context;
     private PDFView pdfView;
-    Integer pageNumber = 1;
+    Integer pageNumber = 0;
     String assetName;
     String filePath;
 
