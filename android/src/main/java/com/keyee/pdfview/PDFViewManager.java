@@ -109,7 +109,7 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
     @ReactProp(name = "pageNumber")
     public void setPageNumber(PDFView view, Integer pageNum) {
         //view.setPageNumber(pageNum);
-        if (pageNum > 0){
+        if (pageNum > -1){
             pageNumber = pageNum;
             display(false);
         }
