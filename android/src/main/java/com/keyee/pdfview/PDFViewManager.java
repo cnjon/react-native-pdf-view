@@ -3,6 +3,7 @@ package com.keyee.pdfview;
 import java.io.File;
 
 import android.content.Context;
+import android.view.ViewGroup;
 import android.util.Log;
 import android.graphics.PointF;
 
@@ -22,6 +23,7 @@ import com.facebook.react.uimanager.events.RCTEventEmitter;
 import com.facebook.react.common.MapBuilder;
 
 import static java.lang.String.format;
+import java.lang.ClassCastException;
 
 public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPageChangeListener,OnLoadCompleteListener {
     private static final String REACT_CLASS = "RCTPDFViewAndroid";
@@ -45,6 +47,16 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
     public PDFView createViewInstance(ThemedReactContext context) {
         if (pdfView == null){
             pdfView = new PDFView(context, null);
+        } else {
+          /* #39 check parent and remove self from parent */
+          try {
+            final ViewGroup parentView = (ViewGroup) pdfView.getParent();
+            if (parentView != null) {
+              parentView.removeView(pdfView);
+            }
+          } catch (ClassCastException e) {
+            showLog("does not has a parent");
+          }
         }
         return pdfView;
         //return new PDFView(context, null);
