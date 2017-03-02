@@ -15,7 +15,7 @@ import RNFS from 'react-native-fs';
 
 const pdfDownloadURL = 'http://image.tianjimedia.com/imagelist/2009/190/caq4z56jadof.pdf';
 
-export default class PDFExample extends Component {
+export default class PDFExample extends React.Component {
     constructor(props) {
         super(props);
         this.state={
