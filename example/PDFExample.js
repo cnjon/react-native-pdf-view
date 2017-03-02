@@ -3,8 +3,8 @@
  */
 'use strict';
 
-import React,{
-    Component,
+import React from 'react';
+import {
     StyleSheet,
     View,
     Text
@@ -15,7 +15,7 @@ import RNFS from 'react-native-fs';
 
 const pdfDownloadURL = 'http://image.tianjimedia.com/imagelist/2009/190/caq4z56jadof.pdf';
 
-export default class PDFExample extends Component {
+export default class PDFExample extends React.Component {
     constructor(props) {
         super(props);
         this.state={
@@ -26,7 +26,11 @@ export default class PDFExample extends Component {
     }
 
     componentDidMount() {
-        RNFS.downloadFile(pdfDownloadURL, this.pdfPath).then(res => {
+        var options = {
+            fromUrl: pdfDownloadURL,
+            toFile: this.pdfPath
+        };
+        RNFS.downloadFile(options).promise.then(res => {
             this.setState({isPdfDownload: true});
         }).catch(err => {
             console.log(err);

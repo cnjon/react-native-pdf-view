@@ -6,9 +6,15 @@ import android.content.Context;
 import android.util.Log;
 import android.graphics.PointF;
 
+import com.github.barteksc.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
+import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
+
+/*
 import com.joanzapata.pdfview.PDFView;
 import com.joanzapata.pdfview.listener.OnPageChangeListener;
 import com.joanzapata.pdfview.listener.OnLoadCompleteListener;
+*/
 
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -27,7 +33,7 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
     private static final String REACT_CLASS = "RCTPDFViewAndroid";
     private Context context;
     private PDFView pdfView;
-    Integer pageNumber = 1;
+    Integer pageNumber = 0;
     String assetName;
     String filePath;
 
@@ -75,7 +81,7 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
         if (assetName != null) {
             pdfView.fromAsset(assetName)
                 .defaultPage(pageNumber)
-                .swipeVertical(true)
+                //.swipeVertical(true)
                 .onPageChange(this)
                 .onLoad(this)
                 .load();
@@ -87,7 +93,7 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
                 .defaultPage(pageNumber)
                 //.showMinimap(false)
                 //.enableSwipe(true)
-                .swipeVertical(true)
+                //.swipeVertical(true)
                 .onPageChange(this)
                 .onLoad(this)
                 .load();
@@ -103,7 +109,7 @@ public class PDFViewManager extends SimpleViewManager<PDFView> implements OnPage
     @ReactProp(name = "pageNumber")
     public void setPageNumber(PDFView view, Integer pageNum) {
         //view.setPageNumber(pageNum);
-        if (pageNum > 0){
+        if (pageNum >= 0){
             pageNumber = pageNum;
             display(false);
         }
