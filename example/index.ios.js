@@ -44,4 +44,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('example', () => example);
+AppRegistry.registerComponent('pdfexample', () => example);
