@@ -3,6 +3,7 @@
   "version": "0.3.2",
   "description": "A pdf file view component for react native.",
   "main": "index.js",
+  "typings": "./index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cnjon/react-native-pdf-view.git"
@@ -22,5 +23,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/cnjon/react-native-pdf-view/issues"
+  },
+  "peerDependencies": {
+    "@types/react": "*",
+    "@types/react-native": "*"
   }
 }
