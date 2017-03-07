@@ -1,9 +1,11 @@
 # react-native-pdf-view
 React Native PDF View (cross-platform support)
 
-### Breaking change
+### Breaking changes
 
-React native 0.19 changed the ReactProps class which led to problems with updating native view properties (see https://github.com/facebook/react-native/issues/5649). These errors are corrected in react-native-pdf-view version 0.2.0. Use version 0.2.* for react native >=0.19 and for earlier react native versions use version 0.1.3.
+* React native 0.40 moved iOS headers, thus all iOS react import statements has been changed. Use version 0.4.* for react native >=0.40. For earlier version see below breaking change.
+
+* React native 0.19 changed the ReactProps class which led to problems with updating native view properties (see https://github.com/facebook/react-native/issues/5649). These errors are corrected in react-native-pdf-view version 0.2.0. Use version 0.2.* for react native >=0.19 and for earlier react native versions use version 0.1.3.
 
 ### Installation
 ```bash
