@@ -1,7 +1,8 @@
 import * as React from 'react';
+import * as ReactNative from 'react-native';
 
 interface Props {
-  style?: React.ViewStyle,
+  style?: ReactNative.ViewStyle,
   path: string,
   src?: string,
   asset?: string,
