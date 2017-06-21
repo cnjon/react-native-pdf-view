@@ -80,7 +80,6 @@
     self.decelerationRate = UIScrollViewDecelerationRateFast;
     self.delegate = self;
     self.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.layer.borderWidth = 5;    
     self.minimumZoomScale = .25;
     self.maximumZoomScale = 5;
 }

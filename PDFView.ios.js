@@ -27,6 +27,8 @@ PDFView.propTypes = {
   path: PropTypes.string,
   pageNumber: PropTypes.number,
   zoom: PropTypes.number,
+  borderWidth: PropTypes.number,
+  backgroundColor: PropTypes.string,
   onLoadComplete: PropTypes.func
 };
 
