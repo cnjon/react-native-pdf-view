@@ -136,5 +136,7 @@ var styles = StyleSheet.create({
 | src        | string 			| null 			 				| pdf absolute path(`Deprecated`) | ✔   | ✔ |
 | asset        | string 			| null 			 				| the name of a PDF file in the asset folder |   | ✔ |
 | pageNumber    		  | number  	    |	1 		 				| page index | ✔   | ✔ |
+| borderWidth    		  | number  	    |	5 		 				| gray border width | ✔   |   |
+| backgroundColor    		  | string  	    |	white	 				| background color | ✔   |   |
 | zoom 		  | number  	    |	1.0 	| zoom scale | ✔   | ✔ |
 | onLoadComplete 			| function     	  | null	 			| page load complete,return page count | ✔   | ✔ |

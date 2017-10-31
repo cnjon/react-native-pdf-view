@@ -25,6 +25,8 @@ RCT_EXPORT_VIEW_PROPERTY(src, NSString);
 RCT_EXPORT_VIEW_PROPERTY(path, NSString);
 RCT_EXPORT_VIEW_PROPERTY(pageNumber, NSNumber);
 RCT_EXPORT_VIEW_PROPERTY(zoom, NSNumber);
+RCT_EXPORT_VIEW_PROPERTY(borderWidth, NSNumber);
+RCT_EXPORT_VIEW_PROPERTY(backgroundColor, UIColor);
 RCT_EXPORT_VIEW_PROPERTY(onChange, RCTBubblingEventBlock);
 
 @end

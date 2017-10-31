@@ -80,9 +80,8 @@
     self.decelerationRate = UIScrollViewDecelerationRateFast;
     self.delegate = self;
     self.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.layer.borderWidth = 5;    
-    self.minimumZoomScale = .25;
-    self.maximumZoomScale = 5;
+    self.minimumZoomScale = 0.9;
+    self.maximumZoomScale = 2;
 }
 
 
@@ -91,7 +90,7 @@
     if( PDFPage != NULL ) CGPDFPageRetain(PDFPage);
     if( _PDFPage != NULL ) CGPDFPageRelease(_PDFPage);
     _PDFPage = PDFPage;
-    
+
     // PDFPage is null if we're requested to draw a padded blank page by the parent UIPageViewController
     if( PDFPage == NULL ) {
         self.pageRect = self.bounds;
@@ -117,35 +116,35 @@
 
 // Use layoutSubviews to center the PDF page in the view.
 
-- (void)layoutSubviews 
+- (void)layoutSubviews
 {
     [super layoutSubviews];
-    
+
     //NSLog(@"%s bounds: %@",__PRETTY_FUNCTION__,NSStringFromCGRect(self.bounds));
-    
+
     // Center the image as it becomes smaller than the size of the screen.
-    
+
     CGSize boundsSize = self.bounds.size;
-        
+
     CGRect frameToCenter = self.tiledPDFView.frame;
-    
+
     // Center horizontally.
-    
+
     if (frameToCenter.size.width < boundsSize.width)
         frameToCenter.origin.x = (boundsSize.width - frameToCenter.size.width) / 2;
     else
         frameToCenter.origin.x = 0;
-    
+
     // Center vertically.
-    
+
     if (frameToCenter.size.height < boundsSize.height)
         frameToCenter.origin.y = (boundsSize.height - frameToCenter.size.height) / 2;
     else
         frameToCenter.origin.y = 0;
-    
+
     self.tiledPDFView.frame = frameToCenter;
     self.backgroundImageView.frame = frameToCenter;
-    
+
     /*
      To handle the interaction between CATiledLayer and high resolution screens, set the tiling view's contentScaleFactor to 1.0.
      If this step were omitted, the content scale factor would be 2.0 on high resolution screens, which would cause the CATiledLayer to ask for tiles of the wrong scale.
@@ -175,8 +174,8 @@
 {
     NSLog(@"%s scrollView.zoomScale=%f",__PRETTY_FUNCTION__,self.zoomScale);
     // Remove back tiled view.
-    [self.oldTiledPDFView removeFromSuperview];
-    
+    //[self.oldTiledPDFView removeFromSuperview];
+
     // Set the current TiledPDFView to be the old view.
     self.oldTiledPDFView = self.tiledPDFView;
     //[self addSubview:self.oldTiledPDFView];
@@ -188,14 +187,19 @@
  When the user stops zooming, create a new TiledPDFView based on the new zoom level and draw it on top of the old TiledPDFView.
  */
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
-    
+
     NSLog(@"BEFORE  %s scale=%f, _PDFScale=%f",__PRETTY_FUNCTION__,scale,_PDFScale);
     // Set the new scale factor for the TiledPDFView.
-    _PDFScale *= scale;
+    //_PDFScale *= scale;
     NSLog(@"AFTER  %s scale=%f, _PDFScale=%f newFrame=%@",__PRETTY_FUNCTION__,scale,_PDFScale,NSStringFromCGRect(self.oldTiledPDFView.frame));
 
+	if (self.zoomScale > 1) {
+		[self setZoomScale:1 animated:YES];
+	}
+	self.tiledPDFView = self.oldTiledPDFView;
+
     // Create a new tiled PDF View at the new scale
-    [self replaceTiledPDFViewWithFrame:self.oldTiledPDFView.frame];
+    //[self replaceTiledPDFViewWithFrame:self.oldTiledPDFView.frame];
 }
 
 -(void)replaceTiledPDFViewWithFrame:(CGRect)frame {

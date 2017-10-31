@@ -111,6 +111,24 @@
     }
 }
 
+- (void)setBorderWidth:(NSNumber *)borderWidth
+{
+    if (![borderWidth isEqual:_borderWidth]) {
+        NSLog(@"setBorderWidth %@ -> %@", _borderWidth, borderWidth);
+        _borderWidth = [borderWidth copy];
+        [self reloadPdf];
+    }
+}
+
+- (void)setBackgroundColor:(NSNumber *)backgroundColor
+{
+  if (![backgroundColor isEqual:_backgroundColor]) {
+    NSLog(@"setPageNumber %@ -> %@", _backgroundColor, backgroundColor);
+    _backgroundColor = [backgroundColor copy];
+    [self reloadPdf];
+  }
+}
+
 - (void)layoutSubviews
 {
   [super layoutSubviews];
@@ -122,6 +140,8 @@
   
   _pdfScrollView.frame = self.bounds;
   _pdfScrollView.zoomScale = (_zoom == NULL ? 1.0 : [_zoom doubleValue]);
+  _pdfScrollView.layer.borderWidth = (_borderWidth == NULL ? 5 : [_borderWidth intValue]);
+  _pdfScrollView.backgroundColor = (_backgroundColor == NULL ? [UIColor whiteColor] : _backgroundColor);
   _pdfScrollView.PDFScale = myScale;
   _pdfScrollView.tiledPDFView.bounds = self.bounds;
   _pdfScrollView.tiledPDFView.myScale = myScale;
