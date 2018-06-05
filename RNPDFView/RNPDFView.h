@@ -7,7 +7,7 @@
 //
 
 #import <React/RCTEventDispatcher.h>
-#import "UIView+React.h"
+#import <React/UIView+React.h>
 
 @class RCTEventDispatcher;
 
