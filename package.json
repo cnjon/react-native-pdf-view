@@ -27,5 +27,8 @@
   "peerDependencies": {
     "@types/react": "*",
     "@types/react-native": "*"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0"
   }
 }
