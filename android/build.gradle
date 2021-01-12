@@ -1,6 +1,17 @@
-apply plugin: 'com.android.library'
-
 description = 'android-pdfview'
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.3'
+    }
+}
+
+apply plugin: 'com.android.library'
 
 def _ext = rootProject.ext
 
@@ -9,16 +20,6 @@ def _compileSdkVersion = _ext.has('compileSdkVersion') ? _ext.compileSdkVersion 
 def _buildToolsVersion = _ext.has('buildToolsVersion') ? _ext.buildToolsVersion : '28.0.3'
 def _minSdkVersion = _ext.has('minSdkVersion') ? _ext.minSdkVersion : 16
 def _targetSdkVersion = _ext.has('targetSdkVersion') ? _ext.targetSdkVersion : 28
-
-buildscript {
-    repositories {
-        jcenter()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.3'
-    }
-}
 
 android {
     compileSdkVersion _compileSdkVersion
