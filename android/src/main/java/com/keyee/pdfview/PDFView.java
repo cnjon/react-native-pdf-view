@@ -1,6 +1,5 @@
 package com.keyee.pdfview;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
@@ -17,8 +16,7 @@ public class PDFView implements ReactPackage {
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Collections.emptyList();
     }
-
-    @Override
+    // ReactPackage deprecated `createJSModules` as of RN 0.47.0
     public List<Class<? extends JavaScriptModule>> createJSModules() {
         return Collections.emptyList();
     }
