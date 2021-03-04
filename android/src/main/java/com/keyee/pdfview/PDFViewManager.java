@@ -63,8 +63,7 @@ public class PDFViewManager extends SimpleViewManager<PdfView> {
 
     @ReactProp(name = "zoom")
     public void zoomTo(PdfView view, float zoomScale) {
-        PointF pivot = new PointF(zoomScale, zoomScale);
-        view.zoomCenteredTo(zoomScale, pivot);
+        view.zoomToScale(zoomScale);
     }
 
     private void showLog(final String str) {
