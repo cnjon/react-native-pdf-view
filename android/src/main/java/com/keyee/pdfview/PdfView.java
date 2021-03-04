@@ -120,7 +120,7 @@ public class PdfView extends PDFView implements OnPageChangeListener, OnLoadComp
         display(false);
     }
 
-    public void zoomTo(float zoomScale) {
+    public void zoomToScale(float zoomScale) {
         PointF pivot = new PointF(zoomScale, zoomScale);
         this.zoomCenteredTo(zoomScale, pivot);
     }
