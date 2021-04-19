@@ -4,7 +4,7 @@ description = 'android-pdfview'
 
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
@@ -24,7 +24,7 @@ android {
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
